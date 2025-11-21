@@ -17,17 +17,17 @@ export default function LandingPage({ onOpenAuthModal }: LandingPageProps) {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center gap-3">
-              <div className="relative w-10 h-10 rounded-lg overflow-hidden">
+              <div className="relative w-12 h-12 rounded-full overflow-hidden bg-white shadow-lg border-2 border-gray-200">
                 <Image
                   src="/Logo RiceLink.png"
                   alt="RiceLink Logo"
                   fill
-                  className="object-contain"
+                  className="object-contain p-1"
                 />
               </div>
               <div>
                 <h1 className="text-xl font-bold text-white">RiceLink</h1>
-                <p className="text-xs text-gray-400">Kết nối nông dân</p>
+                <p className="text-xs text-gray-400">Kết nối chuỗi lúa</p>
               </div>
             </div>
 
@@ -79,7 +79,7 @@ export default function LandingPage({ onOpenAuthModal }: LandingPageProps) {
                 <span className="text-green-400">Thông minh & Hiệu quả</span>
               </h1>
               <p className="text-xl text-gray-300">
-                Kết nối nông dân với các cơ sở sấy lúa uy tín. Dễ dàng, nhanh chóng, tiết kiệm chi phí.
+                Kết nối nhóm khách hàng có nhu cầu sấy lúa và nhóm cung ứng dịch vụ uy tín. Dễ dàng, nhanh chóng, tiết kiệm chi phí.
               </p>
               <button
                 onClick={() => onOpenAuthModal("register")}
@@ -88,13 +88,15 @@ export default function LandingPage({ onOpenAuthModal }: LandingPageProps) {
                 Đăng ký miễn phí
               </button>
             </div>
-            <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/Logo RiceLink.png"
-                alt="RiceLink Banner"
-                fill
-                className="object-contain"
-              />
+            <div className="relative h-96 w-96 mx-auto rounded-full overflow-hidden shadow-2xl bg-white p-8 flex items-center justify-center">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/Logo RiceLink.png"
+                  alt="RiceLink Banner"
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -189,25 +191,51 @@ export default function LandingPage({ onOpenAuthModal }: LandingPageProps) {
 
       {/* About Section */}
       <section id="about" className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Về RiceLink</h2>
-          <p className="text-xl text-gray-300 leading-relaxed mb-8">
-            RiceLink là nền tảng kết nối trực tuyến giữa nông dân và các cơ sở sấy lúa tại Việt Nam.
-            Chúng tôi cam kết mang đến giải pháp công nghệ giúp nông dân tiết kiệm thời gian,
-            chi phí và nâng cao hiệu quả sản xuất.
-          </p>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-6">Về RiceLink</h2>
+            <p className="text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
+              RiceLink là nền tảng kết nối trực tuyến giữa nhóm khách hàng có nhu cầu sấy lúa và nhóm cung ứng dịch vụ.
+              Chúng tôi cam kết mang đến giải pháp công nghệ giúp khách hàng tiết kiệm thời gian,
+              chi phí và nâng cao hiệu quả sản xuất.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8 mt-12">
-            <div className="bg-gray-800/50 rounded-xl p-6">
-              <div className="text-4xl font-bold text-green-400 mb-2">500+</div>
-              <p className="text-gray-300">Cơ sở sấy lúa</p>
+            {/* Image 1: rice.jpg */}
+            <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-700 hover:border-green-500 transition-all hover:scale-105">
+              <div className="relative h-64">
+                <Image
+                  src="/rice.jpg"
+                  alt="Rice"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
-            <div className="bg-gray-800/50 rounded-xl p-6">
-              <div className="text-4xl font-bold text-blue-400 mb-2">10K+</div>
-              <p className="text-gray-300">Nông dân tin dùng</p>
+
+            {/* Image 2: MapDongBang.jpg */}
+            <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-700 hover:border-blue-500 transition-all hover:scale-105">
+              <div className="relative h-64">
+                <Image
+                  src="/MapDongBang.jpg"
+                  alt="Map Dong Bang"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
-            <div className="bg-gray-800/50 rounded-xl p-6">
-              <div className="text-4xl font-bold text-yellow-400 mb-2">50K+</div>
-              <p className="text-gray-300">Đơn hàng thành công</p>
+
+            {/* Image 3: rice.jpg */}
+            <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-700 hover:border-yellow-500 transition-all hover:scale-105">
+              <div className="relative h-64">
+                <Image
+                  src="/rice.jpg"
+                  alt="Rice"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -223,11 +251,11 @@ export default function LandingPage({ onOpenAuthModal }: LandingPageProps) {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-gray-800 rounded-xl p-6">
               <p className="text-gray-400 mb-2">Email</p>
-              <p className="text-white font-semibold">support@ricelink.vn</p>
+              <p className="text-white font-semibold">ricelink.contact@gmail.com</p>
             </div>
             <div className="bg-gray-800 rounded-xl p-6">
               <p className="text-gray-400 mb-2">Điện thoại</p>
-              <p className="text-white font-semibold">1900 xxxx</p>
+              <p className="text-white font-semibold">076 946 2253</p>
             </div>
             <div className="bg-gray-800 rounded-xl p-6">
               <p className="text-gray-400 mb-2">Địa chỉ</p>
@@ -238,43 +266,9 @@ export default function LandingPage({ onOpenAuthModal }: LandingPageProps) {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 border-t border-gray-800 py-12 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="text-white font-bold mb-4">RiceLink</h3>
-              <p className="text-gray-400 text-sm">
-                Nền tảng kết nối nông dân và cơ sở sấy lúa hàng đầu Việt Nam.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Chính sách</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">Điều khoản sử dụng</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Chính sách bảo mật</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Chính sách hoàn tiền</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Liên kết</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">Về chúng tôi</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Tuyển dụng</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Hỗ trợ</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">Trung tâm hỗ trợ</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Hướng dẫn sử dụng</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">FAQs</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-            <p>© 2025 RiceLink. All rights reserved. Made with ❤️ in Đồng Tháp, Việt Nam</p>
-          </div>
+      <footer className="bg-gray-900 border-t border-gray-800 py-8 px-4">
+        <div className="max-w-7xl mx-auto text-center text-gray-400 text-sm">
+          <p>© 2025 RiceLink. All rights reserved. Made with ❤️ in Đồng Tháp, Việt Nam</p>
         </div>
       </footer>
     </div>

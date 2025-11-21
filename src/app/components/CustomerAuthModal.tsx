@@ -312,7 +312,7 @@ export default function CustomerAuthModal({ onClose }: AuthModalProps) {
                 </label>
                 <select
                   value={registerData.customerType}
-                  onChange={(e) => setRegisterData({ ...registerData, customerType: e.target.value as any })}
+                  onChange={(e) => setRegisterData({ ...registerData, customerType: e.target.value as "farmer" | "cooperative" | "trader" | "enterprise" })}
                   className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 >
                   <option value="farmer">Nông dân</option>
